@@ -1,8 +1,7 @@
-#include "4/4.h"
+#include "5/5.h"
 
 int main() {
-    run41();
-    run42();
-    run43();
+    run51();
+    run52();
     return 0;
 }
