@@ -1,7 +1,6 @@
-#include "5/5.h"
+#include "6/6.h"
 
 int main() {
-    run51();
-    run52();
+    run6();
     return 0;
 }
