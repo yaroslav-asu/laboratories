@@ -5,23 +5,22 @@
 #include <map>
 #include <filesystem>
 
-using namespace std;
 
 void run51() {
-    string inp;
-    set<char> marks{',', '.', ';', ':', '?', '!', '-', '(', ')', '"'};
+    std::string inp;
+    std::set<char> marks{',', '.', ';', ':', '?', '!', '-', '(', ')', '"'};
     int counter = 0;
-    cin >> inp;
+    std::cin >> inp;
     for (char ch: inp) {
         if (marks.count(ch)) {
             counter++;
         }
     }
-    cout << counter;
+    std::cout << counter;
 }
 
-map<char, int> str_letters_count(string str) {
-    map<char, int> letters;
+std::map<char, int> str_letters_count(std::string str) {
+    std::map<char, int> letters;
     for (char letter: str) {
         if (letters.count(letter)) {
             letters[letter]++;
@@ -32,9 +31,9 @@ map<char, int> str_letters_count(string str) {
     return letters;
 }
 
-bool has_more_than_three_letters(string str) {
-    map<char, int> letters = str_letters_count(str);
-    for (pair<char, int> letter_pair: letters) {
+bool has_more_than_three_letters(std::string str) {
+    std::map<char, int> letters = str_letters_count(str);
+    for (std::pair<char, int> letter_pair: letters) {
         if (letter_pair.second >= 3) {
             return true;
         }
@@ -44,9 +43,9 @@ bool has_more_than_three_letters(string str) {
 
 void run52() {
     setlocale(LC_ALL, "Russian");
-    ifstream fin(filesystem::current_path().string() + "/../5/in.txt");
-    string inp;
-    set<string> shortest_words;
+    std::ifstream fin(std::filesystem::current_path().string() + "/../5/in.txt");
+    std::string inp;
+    std::set<std::string> shortest_words;
     short n;
     fin >> n;
     while (fin >> inp) {
@@ -58,9 +57,9 @@ void run52() {
         }
     }
     fin.close();
-    ofstream fout(filesystem::current_path().string() + "/../5/out.txt");
-    for (string str: shortest_words) {
-        fout << str << endl;
+    std::ofstream fout(std::filesystem::current_path().string() + "/../5/out.txt");
+    for (std::string str: shortest_words) {
+        fout << str << std::endl;
     }
     fout.close();
 }

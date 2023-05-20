@@ -1,16 +1,14 @@
 #include "iostream"
 
-using namespace std;
-
 void run41() {
     int n;
-    cin >> n;
+    std::cin >> n;
     int a[n];
     int equal_digits_counter = 0;
 
     for (int i = 0; i < n; i++) {
         int tmp;
-        cin >> tmp;
+        std::cin >> tmp;
         a[i] = tmp;
         short last_char = 0;
         bool all_digits_equal = true;
@@ -34,14 +32,14 @@ void run41() {
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 if (a[i] < a[j]) {
-                    swap(a[i], a[j]);
+                    std::swap(a[i], a[j]);
                 }
             }
         }
     }
 
     for (int i = 0; i < n; i++) {
-        cout << a[i] << " ";
+        std::cout << a[i] << " ";
     }
 }
 
@@ -65,22 +63,22 @@ int min_num_digit(int num) {
 
 void run42() {
     int n;
-    cin >> n;
+    std::cin >> n;
     int a[n];
 
     for (int i = 0; i < n; i++) {
-        cin >> a[i];
+        std::cin >> a[i];
     }
 
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             int sum_i = num_sum(a[i]), sum_j = num_sum(a[j]);
             if (sum_i > sum_j) {
-                swap(a[i], a[j]);
+                std::swap(a[i], a[j]);
             } else if (sum_i == sum_j) {
                 int min_i = min_num_digit(a[i]), min_j = min_num_digit(a[j]);
                 if ((min_i > min_j) || (min_i == min_j && a[i] > a[j])) {
-                    swap(a[i], a[j]);
+                    std::swap(a[i], a[j]);
                 }
             }
         }
@@ -89,11 +87,11 @@ void run42() {
 
 void run43() {
     unsigned short n, m;
-    cin >> n >> m;
+    std::cin >> n >> m;
     int matrix[n][m];
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            cin >> matrix[i][j];
+            std::cin >> matrix[i][j];
         }
     }
 
@@ -114,8 +112,8 @@ void run43() {
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            cout << matrix[i][j] << " ";
+            std::cout << matrix[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 };

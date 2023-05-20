@@ -1,13 +1,11 @@
 #include "iostream"
 
-using namespace std;
-
 void run3() {
     unsigned int a, max = 0, max_i = 0, n;
     unsigned long long mlt = 0;
-    cin >> n;
+    std::cin >> n;
     for (int i = 0; i < n; i++) {
-        cin >> a;
+        std::cin >> a;
         if (a % 5 != 0) {
             if (a > max) {
                 max = a;
@@ -20,5 +18,5 @@ void run3() {
             }
         }
     };
-    cout << mlt << " " << max << " " << max_i + 1;
+    std::cout << mlt << " " << max << " " << max_i + 1;
 }

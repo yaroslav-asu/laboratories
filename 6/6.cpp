@@ -2,9 +2,6 @@
 #include "../4/4.h"
 #include "io/io.h"
 
-using namespace std;
-
-
 int matrix_max(int **matrix, int size) {
     int max;
     bool was_changed = false;
@@ -45,7 +42,7 @@ void sort_matrix(int **matrix, int size) {
     for (int i = 0; i < size; i++) {
         for (int j = i + 1; j < size; j++) {
             if (row_sum(matrix[i], size) > row_sum(matrix[j], size)) {
-                swap(matrix[i], matrix[j]);
+                std::swap(matrix[i], matrix[j]);
             }
         }
     }
@@ -53,7 +50,7 @@ void sort_matrix(int **matrix, int size) {
 
 void run6() {
     short n;
-    cin >> n;
+    std::cin >> n;
     int **matrix;
     matrix = io::input_matrix(n);
     if (num_sum(matrix_max(matrix, n)) == num_sum(matrix_min(matrix, n))) {

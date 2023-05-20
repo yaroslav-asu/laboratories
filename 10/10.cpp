@@ -1,24 +1,20 @@
 #include <vector>
 #include <cstdlib>
-#include <iostream>
 #include "string"
-
-using namespace std;
-
 
 class Animal {
 protected:
     int calories = 500;
 public:
-    string name = "animal";
+    std::string name = "animal";
     bool dead = false;
     int age = 0;
 
-    Animal(string name) {
+    Animal(std::string name) {
         this->name = name;
     }
 
-    Animal(string name, int age) {
+    Animal(std::string name, int age) {
         this->name = name;
         this->age = age;
     }
@@ -47,9 +43,9 @@ public:
 
 class Mammal : public Animal {
 public:
-    Mammal(string name) : Animal(name) {}
+    Mammal(std::string name) : Animal(name) {}
 
-    Mammal(string name, int age) : Animal(name, age) {}
+    Mammal(std::string name, int age) : Animal(name, age) {}
 
     void milk() {
         calories -= 200;
@@ -58,9 +54,9 @@ public:
 
 class Bird : public Animal {
 public:
-    Bird(string name) : Animal(name) {}
+    Bird(std::string name) : Animal(name) {}
 
-    Bird(string name, int age) : Animal(name, age) {}
+    Bird(std::string name, int age) : Animal(name, age) {}
 
     void lay_eggs() {
         for (int eggs_count = 0; eggs_count < rand() % 5 + 1; eggs_count++) {
@@ -71,10 +67,10 @@ public:
 
 class Cage {
 public:
-    string animal_name;
-    vector<Animal *> animals;
+    std::string animal_name;
+    std::vector<Animal *> animals;
 
-    Cage(string animal_name) {
+    Cage(std::string animal_name) {
         this->animal_name = animal_name;
     }
 
@@ -106,9 +102,9 @@ public:
 
 class Zoo {
 public:
-    vector<Cage *> cages;
+    std::vector<Cage *> cages;
 
-    Cage *new_cage(string cage_name) {
+    Cage *new_cage(std::string cage_name) {
         Cage *cage = new Cage(cage_name);
         this->cages.push_back(cage);
         return cages[cages.size() - 1];

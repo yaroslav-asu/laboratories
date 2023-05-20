@@ -1,7 +1,5 @@
 #include "iostream"
 
-using namespace std;
-
 class Triangle {
 private:
     float side1;
@@ -26,7 +24,7 @@ public:
             this->side2 = side2;
             this->side3 = side3;
         } else {
-            cout << "Triangle doesn't exist" << endl;
+            std::cout << "Triangle doesn't exist" << std::endl;
             this->side1 = -1;
             this->side2 = -1;
             this->side3 = -1;
@@ -35,10 +33,10 @@ public:
 
     void print_perimetr() {
         float triangle_perimetr = perimetr();
-        if (triangle_perimetr != -3){
-            cout << triangle_perimetr << endl;
-        }else{
-            cout << "Perimetr doesn't exist";
+        if (triangle_perimetr != -3) {
+            std::cout << triangle_perimetr << std::endl;
+        } else {
+            std::cout << "Perimetr doesn't exist";
         }
     }
 
