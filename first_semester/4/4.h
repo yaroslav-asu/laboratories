@@ -5,7 +5,9 @@
 #ifndef LABORATORIES_4_H
 #define LABORATORIES_4_H
 
-int num_sum(int);
+namespace forthTask {
+    int num_sum(int);
+}
 
 void run41();
 

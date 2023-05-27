@@ -7,7 +7,7 @@
 namespace io{
     int **input_matrix(int);
 
-    void print_matrix(int **, int);
+    void write_matrix(int **, int);
 }
 
 

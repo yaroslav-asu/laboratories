@@ -10,12 +10,12 @@ void run41() {
         int tmp;
         std::cin >> tmp;
         a[i] = tmp;
-        short last_char = 0;
+        short last_digit = -1;
         bool all_digits_equal = true;
         while (tmp > 0) {
-            if (last_char == 0) {
-                last_char = tmp % 10;
-            } else if (last_char != tmp % 10) {
+            if (last_digit == -1) {
+                last_digit = tmp % 10;
+            } else if (last_digit != tmp % 10) {
                 all_digits_equal = false;
                 break;
             }
@@ -42,14 +42,15 @@ void run41() {
         std::cout << a[i] << " ";
     }
 }
-
-int num_sum(int num) {
-    int sum = 0;
-    while (num > 0) {
-        sum += num % 10;
-        num /= 10;
+namespace forthTask{
+    int num_sum(int num) {
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
     }
-    return sum;
 }
 
 int min_num_digit(int num) {
@@ -72,7 +73,7 @@ void run42() {
 
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
-            int sum_i = num_sum(a[i]), sum_j = num_sum(a[j]);
+            int sum_i = forthTask::num_sum(a[i]), sum_j = forthTask::num_sum(a[j]);
             if (sum_i > sum_j) {
                 std::swap(a[i], a[j]);
             } else if (sum_i == sum_j) {

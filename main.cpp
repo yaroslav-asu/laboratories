@@ -1,6 +1,6 @@
-#include "11/11.h"
+#include "second_semester/1/1.h"
 
 int main() {
-    run11();
+    run_1();
     return 0;
 }

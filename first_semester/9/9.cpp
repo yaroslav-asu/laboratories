@@ -12,11 +12,6 @@ private:
                side3 < side1 + side2;
     }
 
-    float perimetr() {
-        return side1 + side2 + side3;
-    }
-
-
 public:
     Triangle(float side1, float side2, float side3) {
         if (can_exist(side1, side2, side3)) {
@@ -29,6 +24,10 @@ public:
             this->side2 = -1;
             this->side3 = -1;
         }
+    }
+
+    float perimetr() {
+        return side1 + side2 + side3;
     }
 
     void print_perimetr() {

@@ -5,8 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(SFML
         COMPONENTS
-        system window graphics network audio REQUIRED)
+        system window graphics network audio REQUIRED
+        )
 
-add_executable(laboratories main.cpp  1/1.cpp 2/2.cpp 3/3.cpp 4/4.cpp 5/5.cpp 6/6.cpp 6/io/input.cpp 6/io/output.cpp 9/9.cpp 10/10.cpp 8/8.cpp 11/11.cpp)
+add_executable(laboratories main.cpp first_semester/1/1.cpp first_semester/2/2.cpp first_semester/3/3.cpp first_semester/4/4.cpp first_semester/5/5.cpp first_semester/6/6.cpp first_semester/6/io/input.cpp first_semester/6/io/output.cpp first_semester/9/9.cpp first_semester/10/10.cpp first_semester/8/8.cpp first_semester/11/11.cpp second_semester/1/1.cpp)
 
 target_link_libraries(laboratories sfml-graphics sfml-audio)
