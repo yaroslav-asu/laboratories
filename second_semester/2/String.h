@@ -44,4 +44,6 @@ public:
     char *c_str();
 };
 
+void run_2();
+
 #endif //LABORATORIES_STRING_H
