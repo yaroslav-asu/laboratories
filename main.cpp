@@ -1,6 +1,6 @@
-#include "second_semester/6/Logger.h"
+#include "second_semester/7/shape/square/Rectangle.h"
 
 int main() {
-   runLogger();
+    shape();
     return 0;
 }
