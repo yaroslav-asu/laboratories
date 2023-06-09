@@ -1,6 +1,6 @@
-#include "second_semester/5/Vector.h"
+#include "second_semester/6/Logger.h"
 
 int main() {
-    run_vector();
+   runLogger();
     return 0;
 }
