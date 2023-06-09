@@ -1,6 +1,6 @@
-#include "second_semester/7/shape/square/Rectangle.h"
+#include "second_semester/4/Matrix.h"
 
 int main() {
-    shape();
+    run_4();
     return 0;
 }
