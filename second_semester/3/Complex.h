@@ -12,19 +12,19 @@ public:
 
     Complex(Complex &);
 
-    Complex &operator=(const Complex &);
+    Complex operator=(const Complex &);
 
     ~Complex();
 
-    Complex &operator+=(const Complex &complex);
+    Complex operator+=(const Complex &complex);
 
-    Complex &operator+(const Complex &complex) const;
+    Complex operator+(const Complex &complex) const;
 
-    Complex &operator*(const Complex &complex) const;
+    Complex operator*(const Complex &complex) const;
 
-    Complex &operator*=(const Complex &complex);
+    Complex operator*=(const Complex &complex);
 
-    Complex &operator++();
+    Complex operator++();
 
     Complex operator++(int);
 

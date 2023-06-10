@@ -10,7 +10,7 @@ Complex::Complex(Complex &complex) {
     this->imaginary = complex.imaginary;
 }
 
-Complex &Complex::operator=(const Complex &complex) {
+Complex Complex::operator=(const Complex &complex) {
     this->real = complex.real;
     this->imaginary = complex.imaginary;
     return *this;
@@ -18,35 +18,33 @@ Complex &Complex::operator=(const Complex &complex) {
 
 Complex::~Complex() = default;
 
-Complex &Complex::operator+=(const Complex &complex) {
+Complex Complex::operator+=(const Complex &complex) {
     this->real += complex.real;
     this->imaginary += complex.imaginary;
     return *this;
 }
 
-Complex &Complex::operator+(const Complex &complex) const {
-    Complex *tmp;
-    tmp->real = this->real + complex.real;
-    tmp->imaginary = this->imaginary + complex.imaginary;
-    return *tmp;
+Complex Complex::operator+(const Complex &complex) const {
+    Complex tmp(this->real + complex.real, this->imaginary + complex.imaginary);
+    return tmp;
 }
 
-Complex &Complex::operator*(const Complex &complex) const {
-    Complex *tmp = new Complex(
+Complex Complex::operator*(const Complex &complex) const {
+    Complex tmp = Complex(
             this->real * complex.real - this->imaginary * complex.imaginary,
             this->real * complex.imaginary + this->imaginary * complex.real
     );
-    return *tmp;
+    return tmp;
 }
 
-Complex &Complex::operator*=(const Complex &complex) {
+Complex Complex::operator*=(const Complex &complex) {
     auto tmp = *this * complex;
     this->real = tmp.real;
     this->imaginary = tmp.imaginary;
     return *this;
 }
 
-Complex &Complex::operator++() {
+Complex Complex::operator++() {
     this->real++;
     return *this;
 }
@@ -54,7 +52,7 @@ Complex &Complex::operator++() {
 Complex Complex::operator++(int) {
     Complex temp = *this;
     ++*this;
-    return temp;
+    return *this;
 }
 
 std::ostream &operator<<(std::ostream &os, Complex &complex) {
@@ -75,14 +73,17 @@ void run_3() {
     std::cout << b << std::endl;
     a = b;
     std::cout << a << std::endl;
-    std::cout << a + b << std::endl;
+    Complex c = a + b;
+    std::cout << c << std::endl;
     a += b;
     std::cout << a << std::endl;
     a = Complex(1, 1);
-    std::cout << a * b << std::endl;
+    c = a * b;
+    std::cout << c << std::endl;
     a *= b;
     std::cout << a << std::endl;
     b++;
     std::cout << b << std::endl;
-    std::cout << ++a << std::endl;
+    c = ++a;
+    std::cout << c << std::endl;
 }
